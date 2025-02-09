@@ -1,0 +1,31 @@
+function getStudents(password) {
+    const p = new Promise((resolve, reject) => {
+
+        if (password == '123') {
+            setTimeout(() => {
+                resolve([
+                    {
+                        name: "Sumudu",
+                        age: 24
+                    }
+                ])
+            }, 10000)
+        } else {
+            setTimeout(() => {
+                reject("Student list can not display: password incorrect")
+            }, 10000)
+
+        }
+    })
+    return p;
+}
+
+async function printStudent() {
+    //if the promise was success save the result in studentList
+    const studentList = await getStudents(123);
+    console.log(studentList);
+
+    console.log("Program ended")
+}
+
+printStudent();
