@@ -21,10 +21,13 @@ function getStudents(password) {
 }
 
 async function printStudent() {
-    //if the promise was success save the result in studentList
-    const studentList = await getStudents(123);
-    console.log(studentList);
-
+    try {
+        //if the promise was success save the result in studentList
+        const studentList = await getStudents(1893);
+        console.log(studentList);
+    } catch (e) {
+        console.log(e);
+    }
     console.log("Program ended")
 }
 
